@@ -81,5 +81,17 @@ class TestArr < Minitest::Test
 	  choice = 2 
 	   assert_equal(true, winning(board,player))
 	end
+	def test_winningcombo6
+		board = ["x","2","3","4","x","6","7","8","x"]
+	  player = "x"
+	  choice = 2 
+	   assert_equal(true, winning(board,player))
+	end
+	def test_winningcombo7
+		board = ["1","2","x","4","x","6","x","8","9"]
+	  player = "x"
+	  choice = 2 
+	   assert_equal(true, winning(board,player))
+	end
 	
  end 
