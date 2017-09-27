@@ -68,6 +68,22 @@ def winning(board,player)
 	emp_array.include?(true)
 end
 
+def fullboard(board)
+    if board.include?("1") ||
+       board.include?("2") ||
+       board.include?("3") ||
+       board.include?("4") ||
+       board.include?("5") ||
+       board.include?("6") ||
+       board.include?("7") ||
+       board.include?("8") ||
+       board.include?("9")
+        false
+    else
+        true
+    end
+end
+
 # def samesign(winning)
 # 	if combos[0] == combos[1]
 

@@ -93,5 +93,17 @@ class TestArr < Minitest::Test
 	  choice = 2 
 	   assert_equal(true, winning(board,player))
 	end
-	
+	def test_fullboard
+		board = ["x","o","x","o","x","o","x","x","x"]
+	  player = "x"
+	  choice = 2 
+	   assert_equal(true, fullboard(board))
+	end
+	def test_fullboard
+		board = ["x","2","x","o","x","o","x","x","x"]
+	  player = "x"
+	  choice = 2 
+	   assert_equal(false, fullboard(board))
+	end
  end 
+
