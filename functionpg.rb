@@ -25,11 +25,11 @@ end
 
 def valid_space(board,choice)
 	choice = choice-1
-	if choice > 9
+	if choice > 8
 		false
-	elsif choice < 1
+	elsif choice < 0
 		false
-	elsif board[choice] == "x" || board[choice] == "o"
+	elsif @tttboard[choice] == "x" || @tttboard[choice] == "o"
 		false 
 	else 
 		true
