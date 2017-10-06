@@ -1,9 +1,9 @@
-class Playerseq
+class Playerrandom
 # RANDOM PICKER
- attr_reader :player
+ attr_reader :marker
 
  	def initialize(marker)
- 		@player = marker
+ 		@marker = marker
  	end
 
  	def move(board)
@@ -16,7 +16,7 @@ class Playerseq
  		  	ind << index+1
  		  end
 		end
-		ind.first
+		ind.sample
 	end
 end
         
