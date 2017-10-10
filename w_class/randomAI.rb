@@ -16,7 +16,9 @@ class Playerrandom
  		  	ind << index+1
  		  end
 		end
-		ind.sample
+		move = ind.sample
+		p move
+		move
 	end
 end
         
