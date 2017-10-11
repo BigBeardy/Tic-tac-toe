@@ -2,7 +2,8 @@ class Board
 
   attr_accessor :tttboard
   def initialize 
-  	@tttboard = ["1","2","3","4","5","6","7","8","9"]
+  	# @tttboard = ["1","2","3","4","5","6","7","8","9"]
+    @tttboard = ["","","","","","","","",""]
   	
   end
 
@@ -17,11 +18,12 @@ end
 # end
 
 def full_board()
-    if  @tttboard.include?("1")||@tttboard.include?("2")||
-        @tttboard.include?("3")||@tttboard.include?("4")||
-        @tttboard.include?("5")||@tttboard.include?("6")||
-        @tttboard.include?("7")||@tttboard.include?("8")||
-        @tttboard.include?("9") 
+  if @tttboard.include?(" ")
+     # if  @tttboard.include?("1")||@tttboard.include?("2")||
+    #     @tttboard.include?("3")||@tttboard.include?("4")||
+    #     @tttboard.include?("5")||@tttboard.include?("6")||
+    #     @tttboard.include?("7")||@tttboard.include?("8")||
+    #     @tttboard.include?("9") 
       false
     else
       true

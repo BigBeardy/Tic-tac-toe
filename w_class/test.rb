@@ -3,14 +3,16 @@ require 'minitest/autorun'
 require_relative "sequenceAI.rb"
 require_relative "randomAI.rb"
 require_relative "unbeatableAI"
+require_relative "board.rb"
 
 class TestArr < Minitest::Test
-	# def test_update_board
-	#   board = ["1","2","3","4","5","6","7","8","9"]
-	#   player = "x"
-	#   choice = 2 
-	#   assert_equal(["1","x","3","4","5","6","7","8","9"],update_board(board,player,choice))
-	# end
+	def test_update_board
+		board = Board.new
+	  # board = ["1","2","3","4","5","6","7","8","9"]
+	  player = "x"
+	  choice = 2 
+	  assert_equal(["","x","","","","","","",""],board.update(player,choice))
+	end
 	
 	# def test_update_board5
 	#   board = ["1","x","3","4","5","6","7","8","9"]
@@ -139,28 +141,32 @@ class TestArr < Minitest::Test
 		assert_equal(true,[4,5,6,7,8,9].include?(player))
 
 	end
+	def test_for_marker
+		player = Playerunbeatable.new("x")
+		assert_equal("x", player.marker)
+	end
 	def test_for_win
 		marker = "x"
 		player = Playerunbeatable.new(marker)
-		board = ["x","x","3","4","5","6","7","8","9"]
+		board = ["x","x","","","","","","",""]
 		assert_equal(3,player.move(board))
 	end 
 	def test_for_win2
 		marker = "x"
 		player = Playerunbeatable.new(marker)
-		board = ["1","2","3","4","5","6","7","x","x"]
+		board = ["","","","","","","","x","x"]
 		assert_equal(7,player.move(board))
 	end
 	def test_for_win3
 		marker = "x"
 		player = Playerunbeatable.new(marker)
-		board = ["x","2","3","4","5","6","7","8","x"]
+		board = ["x","","","","","","","","x"]
 		assert_equal(5, player.move(board))
 	end
 	def test_for_win4
 		marker = "x"
 		player = Playerunbeatable.new(marker)
-		board = ["1","x","3","4","x","6","7","8","9"]
+		board = ["","x","","","x","","","",""]
 		assert_equal(8, player.move(board))
 	end
 
